@@ -1,2 +1,2 @@
 db:
-	bash -c "docker-compose up"
+	bash -c "docker-compose up -d"
