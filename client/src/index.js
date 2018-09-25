@@ -9,9 +9,10 @@ import reducers from './reducers';
 import App from './components/App';
 import Welcome from './components/Welcome';
 import Signup from './components/auth/Signup';
+import Signout from './components/auth/Signout';
 import Feature from './components/Feature';
 
-const initialState = {};
+const initialState = { auth: { authenticated: localStorage.getItem('token') } };
 
 const store = createStore(
     reducers,
@@ -26,7 +27,8 @@ ReactDOM.render(
                 <Route path="/" exact component={Welcome} />
                 <Route path="/signup" exact component={Signup} />
                 <Route path="/feature" exact component={Feature} />
-            </App> 
+                <Route path="/signout" exact component={Signout} />
+            </App>
         </BrowserRouter>
     </Provider>,
     document.querySelector('#root')
