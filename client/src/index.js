@@ -8,9 +8,10 @@ import reduxThunk from 'redux-thunk';
 import reducers from './reducers';
 import App from './components/App';
 import Welcome from './components/Welcome';
+import Feature from './components/Feature';
 import Signup from './components/auth/Signup';
 import Signout from './components/auth/Signout';
-import Feature from './components/Feature';
+import Signin from './components/auth/Signin';
 
 const initialState = { auth: { authenticated: localStorage.getItem('token') } };
 
@@ -28,6 +29,7 @@ ReactDOM.render(
                 <Route path="/signup" exact component={Signup} />
                 <Route path="/feature" exact component={Feature} />
                 <Route path="/signout" exact component={Signout} />
+                <Route path="/signin" exact component={Signin} />
             </App>
         </BrowserRouter>
     </Provider>,
